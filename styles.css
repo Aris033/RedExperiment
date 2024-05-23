@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.page {
+    display: none;
+}
+
+#page1, #page2, #page3 {
+    display: block;
+}
+
+.glasses {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.glass {
+    width: 50px;
+    height: 100px;
+    margin: 0 10px;
+    background-color: lightblue;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.beaker {
+    width: 100px;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
