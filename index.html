@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experimento de Líquidos</title>
+    <title data-i18n="experiment_title">Experimento de Líquidos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="page1" class="page">
-        <h1>Un Experimento</h1>
-        <p>¡Y ahora algo completamente diferente! Aquí estamos interesados en cómo piensas. Así que nos gustaría que resolvieras un problema.</p>
-        <p>El Problema: A continuación, puedes ver cuatro vasos pequeños con líquido. Están numerados del 1 al 4. También hay un vaso grande. El vaso grande está recubierto con un químico. Normalmente, cuando añades líquido al vaso grande, el líquido se vuelve de color azul claro. Sin embargo, cuando añades algunos líquidos o combinaciones de líquidos, el vaso grande se vuelve rojo. Tu tarea es experimentar con diferentes líquidos e intentar hacer que se vuelva rojo. Cuando estés listo, por favor, presiona el botón INICIAR.</p>
+        <h1 data-i18n="experiment_title">Un Experimento</h1>
+        <div class="content">
+            <p data-i18n="experiment_intro">¡Y ahora algo completamente diferente! Aquí estamos interesados en cómo piensas. Así que nos gustaría que resolvieras un problema.</p>
+            <p data-i18n="experiment_problem">El Problema: A continuación, puedes ver cuatro vasos pequeños con líquido. Están numerados del 1 al 4. También hay un vaso grande. El vaso grande está recubierto con un químico. Normalmente, cuando añades líquido al vaso grande, el líquido se vuelve de color azul claro. Sin embargo, cuando añades algunos líquidos o combinaciones de líquidos, el vaso grande se vuelve rojo. Tu tarea es experimentar con diferentes líquidos e intentar hacer que se vuelva rojo. Cuando estés listo, por favor, presiona el botón INICIAR.</p>
+        </div>
         <div class="glasses">
             <div class="glass" id="glass1">1</div>
             <div class="glass" id="glass2">2</div>
@@ -22,8 +24,10 @@
     </div>
 
     <div id="page2" class="page" style="display: none;">
-        <h1>Para resolver el problema</h1>
-        <p>Intenta verter diferentes líquidos de uno o más de los vasos pequeños en el vaso grande. Puedes intentar con los líquidos uno a la vez o en combinaciones. Para verter el líquido de los vasos pequeños en el grande, debes hacer clic en el vaso o vasos que quieres verter. Después de haber elegido los líquidos que quieres probar, haz clic en "Confirmar selección". El líquido de los vasos pequeños se verterá automáticamente. Si el líquido en el vaso grande es rojo, ¡genial! Si no, puedes intentar con otros líquidos o combinaciones de líquidos. PERO PRIMERO debes hacer clic en el botón "Vaciar". El vaso grande se vaciará y luego podrás probar un nuevo líquido o combinaciones de líquidos.</p>
+        <h1 data-i18n="problem_title">Para Resolver el Problema</h1>
+        <div class="content">
+            <p data-i18n="experiment_instructions">Intenta verter diferentes líquidos de uno o más de los vasos pequeños en el vaso grande. Puedes intentar con los líquidos uno a la vez o en combinaciones. Para verter el líquido de los vasos pequeños en el grande, debes hacer clic en el vaso o vasos que quieres verter. Después de haber elegido los líquidos que quieres probar, haz clic en "Confirmar selección". El líquido de los vasos pequeños se verterá automáticamente. Si el líquido en el vaso grande es rojo, ¡genial! Si no, puedes intentar con otros líquidos o combinaciones de líquidos. PERO PRIMERO debes hacer clic en el botón "Vaciar". El vaso grande se vaciará y luego podrás probar un nuevo líquido o combinaciones de líquidos.</p>
+        </div>
         <div class="glasses">
             <div class="glass" id="glass1">1</div>
             <div class="glass" id="glass2">2</div>
@@ -37,8 +41,10 @@
     </div>
 
     <div id="page3" class="page" style="display: none;">
-        <h1>¡Felicidades!</h1>
-        <p>Ahora hay una parte más de este problema. Has descubierto qué combinación de líquidos necesitas para hacer rojo. La pregunta ahora es sobre los otros líquidos en los otros vasos. En este experimento, ¿qué hacen estos otros líquidos? Nuevamente, para responder a esta pregunta, deberás intentar verter más combinaciones de líquidos y ver qué sucede. Cuando creas que lo has descubierto, presiona el botón "LO SÉ". Si no puedes averiguarlo, presiona el botón "ME RINDO".</p>
+        <h1 data-i18n="congrats_title">¡Felicidades!</h1>
+        <div class="content">
+            <p data-i18n="congrats_message">Ahora hay una parte más de este problema. Has descubierto qué combinación de líquidos necesitas para hacer rojo. La pregunta ahora es sobre los otros líquidos en los otros vasos. En este experimento, ¿qué hacen estos otros líquidos? Nuevamente, para responder a esta pregunta, deberás intentar verter más combinaciones de líquidos y ver qué sucede. Cuando creas que lo has descubierto, presiona el botón "LO SÉ". Si no puedes averiguarlo, presiona el botón "ME RINDO".</p>
+        </div>
         <div class="glasses">
             <div class="glass" id="glass1">1</div>
             <div class="glass" id="glass2">2</div>

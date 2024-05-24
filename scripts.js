@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+        function loadLanguage(lang) {
+            return fetch(lang + '.json')
+                .then(response => response.json())
+                .catch(error => console.error('Error loading language file:', error));
+        }
+    
+        loadLanguage('es').then(translations => {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[key]) {
+                    element.innerHTML = translations[key];
+                }
+            });
+        });
+    
     const startButton = document.getElementById("startButton");
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
@@ -29,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleConfirmSelection(beaker, nextPage) {
         beaker.style.backgroundColor = "lightblue";
+        confirmButton.disabled = true; // Disable the confirm button
 
         if (selectedGlasses.length === 2) {
             const ids = selectedGlasses.map(glass => glass.id);
@@ -39,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         alert("¡FELICIDADES!");
                         page2.style.display = "none";
                         page3.style.display = "block";
+                        confirmButton.disabled = false; // Enable the confirm button again
+                        handleEmpty(largeBeaker2);
                     }, 1500);
                 }
             }
@@ -52,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         alert("¡FELICIDADES!");
                         page2.style.display = "none";
                         page3.style.display = "block";
+                        confirmButton.disabled = false; // Enable the confirm button again
+                        handleEmpty(largeBeaker2);
                     }, 1500);
                 }
             }
@@ -59,12 +80,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function handleConfirmSelectionPage3(beaker) {
+        confirmButton3.disabled = true; // Disable the confirm button
         beaker.style.backgroundColor = "lightblue";
         const ids = selectedGlasses.map(glass => glass.id);
 
         if ((selectedGlasses.length === 2 && ids.includes("glass2") && ids.includes("glass4")) ||
             (selectedGlasses.length === 3 && ids.includes("glass1") && ids.includes("glass2") && ids.includes("glass4"))) {
             beaker.style.backgroundColor = "red";
+            confirmButton3.disabled = false; // Enable the confirm button again
         } else {
             beaker.style.backgroundColor = "lightblue";
         }
@@ -76,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
             glass.style.border = "1px solid #000";
         });
         selectedGlasses = [];
+        confirmButton.disabled = false; // Enable the confirm button again
+        confirmButton3.disabled = false; 
     }
 
     function handleGiveUp() {
@@ -106,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
     startButton.addEventListener("click", function() {
         page1.style.display = "none";
         page2.style.display = "block";
+        handleEmpty(largeBeaker2);
     });
 
     glasses.forEach(glass => {
